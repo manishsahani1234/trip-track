@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Arpalink Radar Pro | V3 Intelligence</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-text"><i class="fas fa-crosshairs"></i> ARPALINK <span style="color:var(--primary)">V3</span></div>
+        <div id="liveStatus" style="font-size:11px; font-weight:700; color:#64748b;"><i class="fas fa-circle" style="color:#ddd"></i> OFFLINE</div>
+    </header>
+
+    <div class="container">
+        <div class="emergency-grid" id="emergencyGrid">
+            <a href="tel:100" class="sos-btn btn-police"><i class="fas fa-user-shield"></i> CALL POLICE</a>
+            <a href="tel:112" class="sos-btn btn-112"><i class="fas fa-phone-alt"></i> CALL 112</a>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card"><h5>Speed</h5><p id="liveSpeed">0 <small>km/h</small></p></div>
+            <div class="metric-card"><h5>Altitude</h5><p id="liveAlt">0 <small>m</small></p></div>
+            <div class="metric-card"><h5>Accuracy</h5><p id="liveAcc">--</p></div>
+            <div class="metric-card"><h5>Bearing</h5><p id="liveHeading">N/A</p></div>
+        </div>
+
+        <button id="mainBtn" class="btn-main" onclick="initiateSystem()"><i class="fas fa-play"></i> INITIALIZE VISUAL RADAR</button>
+
+        <div class="map-card">
+            <div id="map"></div>
+        </div>
+
+        <div class="section-title"><i class="fas fa-images" style="color:var(--primary)"></i> Visual Nearby Address (3KM Range)</div>
+        <div class="address-grid" id="nearGrid">
+            <div style="padding: 20px; color: #94a3b8; text-align: center; width: 100%;">Radar Sensors Offline. Start Trip.</div>
+        </div>
+
+        <div class="section-title"><i class="fas fa-list-ul" style="color:var(--dark)"></i> Live Journey Timeline</div>
+        <div class="log-wrapper">
+            <div id="movementLog">
+                <p style="text-align:center; color:#999; font-size: 12px;">Timeline starts when you move.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="whatsappBtn" class="ws-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
